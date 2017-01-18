@@ -1,0 +1,63 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[a4paper]{geometry}
+\geometry{left=1.8cm, top=1.0cm, right=1.8cm, bottom=2.0cm, footskip=.5cm}
+% FIXME: the font is really strange
+\usepackage[T1]{fontenc}
+\setlength\parindent{0pt}
+
+\usepackage{enumitem}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\usepackage{amssymb}
+
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+% http://tex.stackexchange.com/a/230427/114385
+\usepackage{hyperref}
+\hypersetup{bookmarksnumbered}
+\setcounter{tocdepth}{3}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\author{Pinglei Guo}
+\date{\today}
+
+\begin{document}
+
+\centerline{\Large{Notes on Time Series Databases}}
+\centerline{Pinglei Guo}
+\clearpage
+
+% http://tex.stackexchange.com/questions/19801/how-to-add-a-preface-chapter-to-a-book-that-appears-before-all-chapters-and-is-n
+\addcontentsline{toc}{chapter}{Preface}
+\chapter*{Preface}
+
+This is preface
+
+\addcontentsline{toc}{chapter}{Contents}
+\phantomsection
+\tableofcontents
+\clearpage
+
+\chapter{Introduction}
+
+This is introduction
+
+\section{History}
+
+\subsection{RDD}
+
+\subsection{Column Family Database}
+
+\subsection{Time Structed Merge Tree}
+
+
+\end{document}

@@ -1,0 +1,6 @@
+install:
+  - xelatex notes-on-tsdb
+  - xelatex notes-on-tsdb
+  - sh -c "rm -f *.aux *.log *.out *.bbl *.bcf *.blg *.xml *.xdv *.toc"
+scripts:
+  clean: rm -f *.aux *.log *.out *.bbl *.bcf *.blg *.xml *.xdv *.pdf *.toc
