@@ -22,14 +22,15 @@ so it may not be in a well organized order.
   - [ ] handling meta data
   - [ ] log
   - [ ] multiple machine
-- [ ] Gentic and time series
-  - [ ] existing gentic databases
-  - [ ] store gentic data in time series databases
-  - [ ] mining gentic data (also see mining time series data)
+- [ ] Query Language
 - [ ] Benchmark
   - [ ] work load generation
   - [ ] existing tools and pitfulls
   - [ ] design of [Xephon-B](https://github.com/xephonhq/xephon-b)
+- [ ] Gentic and time series
+  - [ ] existing gentic databases
+  - [ ] store gentic data in time series databases
+  - [ ] mining gentic data (also see mining time series data)
 - [ ] Mining time series data
 
 ## Acknowledgement
