@@ -27,6 +27,9 @@
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bib/db.bib}
+
 \author{Pinglei Guo}
 \date{\today}
 
@@ -59,5 +62,32 @@ This is introduction
 
 \subsection{Time Structed Merge Tree}
 
+\chapter{Background}
+
+\section{Log Structured Merge Tree}
+
+\subsection{Introduction}
+
+\subsection{BigTable}
+
+test cite paper\cite{bigtable}
+
+\subsection{Cassandra}
+
+test cite paper\cite{cassandra}
+
+\subsection{RocksDB}
+
+\subsection{InfluxDB}
+
+InfluxDB
+
+\clearpage
+
+% FIXME: click on the title int contents will jump to inflxudb instead of reference
+\addcontentsline{toc}{chapter}{Reference}
+\chapter*{Reference}
+% TODO: may have two reference
+\printbibliography
 
 \end{document}
