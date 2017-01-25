@@ -29,6 +29,7 @@
 
 \usepackage[backend=biber]{biblatex}
 \addbibresource{bib/db.bib}
+\addbibresource{bib/storage.bib}
 \addbibresource{bib/blog.bib}
 
 \author{Pinglei Guo}
@@ -66,24 +67,7 @@ This is introduction
 \chapter{Background}
 
 \section{Log Structured Merge Tree}
-
-\subsection{Introduction}
-
-test cite blog\cite{blog:sstable-leveldb}
-
-\subsection{BigTable}
-
-test cite paper\cite{db:bigtable}
-
-\subsection{Cassandra}
-
-test cite paper\cite{db:cassandra}
-
-\subsection{RocksDB}
-
-\subsection{InfluxDB}
-
-InfluxDB
+\input{storage/lsm}
 
 \clearpage
 

@@ -1,0 +1,12 @@
+{
+    "plugins" : [
+        "simple-page-toc",
+        "todo"
+    ],
+    "pluginsConfig": {
+        "simple-page-toc": {
+            "maxDepth": 4,
+            "skipFirstH1": true
+       }
+    }
+}
