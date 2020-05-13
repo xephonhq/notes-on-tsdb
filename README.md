@@ -1,45 +1,57 @@
 # Notes on Time Series Database
 
-**Deprecated**, please see related section
+This is a work in progress book that contains:
 
-This a notes about the history and implementation of [various time series databases](https://github.com/xephonhq/awesome-time-series-database).
-It aims to provide a deep insight of how various TSDBs work and how they evolve into current stage.
-Also some related fields like mining time series data would be covered.
-
-There are two versions:
-  - a [Gitbook version](https://at15.gitbooks.io/notes-on-tsdb/content/)
-  - a [Tex version](https://github.com/xephonhq/notes-on-tsdb/blob/master/tex).
-
-For comparing TSDBs, you may want to try [Xephon-B](https://github.com/xephonhq/xephon-b) (still work in progress).
+- Survey on [various existing time series databases](https://github.com/xephonhq/awesome-time-series-database)
+- How to write a (distributed) time series database.
+- Related fields like distributed tracing, OLAP database.
 
 ## Roadmap
 
-The writing roadmap is based on my personal interest and need for course projects,
-so it may not be in a well organized order.
+Merge survey in other repo
 
-- [ ] Basic knowledge of databases
-- [ ] In memory time series databases
-  - [ ] compress data (delta)
-  - [ ] concurrency in single machine
-  - [ ] handling meta data
-  - [ ] log
-  - [ ] multiple machine
-- [ ] Query Language
-- [ ] Benchmark
-  - [ ] work load generation
-  - [ ] existing tools and pitfalls
-  - [ ] design of [Xephon-B](https://github.com/xephonhq/xephon-b)
-- [ ] Genetic and time series
-  - [ ] existing genetic databases
-  - [ ] store genetic data in time series databases
-  - [ ] mining genetic data (also see mining time series data)
-- [ ] Mining time series data
+- [ ] [libtsdb-go](https://github.com/libtsdb/libtsdb-go)
+- [ ] [xephon-k](https://github.com/xephonhq/xephon-k)
+- [ ] [xephon-b](https://github.com/xephonhq/xephon-b)
+
+Layout would be (subject to change, and need to merge w/ layout in libtsdb-go)
+
+- survey
+  - influxdb
+  - prometheus, victoriametrics, thanos (and another one ... forgot the name from weaveworks)
+  - m3db
+  - akumuli, btrdb (both are tree like)
+  - timescaledb (and others on pg, most of them are dead so ...)
+  - druid alike (linkedin also got one)
+  - graphite (and newer backends)
+  - mysql
+  - elasticsearch
+  - crate (it looks pretty good, though it seems it is bought by some other company)
+- tsdb components
+  - query language
+    - complex query execution would also be interesting
+  - index
+  - compression
+  - storage
+    - different backend, pros and cons
+  - distribution
+- benchmark
+  - workload generator
+    - basic math, distribution
+    - historgram and lhdr (forgot what's the name ...)
+  - existing tools and pitfalls
+- analysis (a.k.a ml a.k.a import ts as tf)
+  - prediction
+  - anomaly detection
+- application
+  - iot
+  - monitoring
+- tracing (keep it in this repo for now)
 
 ## Related
 
-- [at15/papers-i-read](https://github.com/at15/papers-i-read)
-- [at15/code-i-read](https://github.com/at15/code-i-read)
-- [at15/pub](https://github.com/at15/pub)
+- [Awesome Time Series Database](https://github.com/xephonhq/awesome-time-series-database)
+- [libtsdb](https://github.com/libtsdb)
 
 ## Acknowledgment
 
