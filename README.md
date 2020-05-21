@@ -1,9 +1,9 @@
 # Notes on Time Series Database
 
-This is a work in progress book that contains:
+This is a work in progress book about time series database (TSDB) that contains:
 
 - Survey on [various existing time series databases](https://github.com/xephonhq/awesome-time-series-database)
-- How to write a (distributed) time series database.
+- How to write a (distributed) time series database from scratch.
 - Related fields like distributed tracing, OLAP database.
 
 ## Roadmap
@@ -16,7 +16,24 @@ Merge survey in other repo
 
 Layout would be (subject to change, and need to merge w/ layout in libtsdb-go)
 
-- survey
+- 01 Overview
+  - time series data
+- 02 Basic
+  - integer, float number and their machine representation (basic for working on compression)
+  - statistic, distribution, random etc.
+  - maybe information theory
+- 03 components
+  - overview
+  - query language
+    - complex query execution would also be interesting
+    - SQL
+    - continuous query, prometheus ppl also has an article about it
+  - index (in memory and on disk?)
+  - compression
+  - storage
+    - different backend, pros and cons
+  - distribution
+- 04 survey
   - influxdb
   - prometheus, victoriametrics, thanos (and another one ... forgot the name from weaveworks)
   - m3db
@@ -27,26 +44,24 @@ Layout would be (subject to change, and need to merge w/ layout in libtsdb-go)
   - mysql
   - elasticsearch
   - crate (it looks pretty good, though it seems it is bought by some other company)
-- tsdb components
-  - query language
-    - complex query execution would also be interesting
-  - index
-  - compression
-  - storage
-    - different backend, pros and cons
-  - distribution
-- benchmark
-  - workload generator
+- 05 benchmark
+  - components
+    - workload generator
+    - stats collector
     - basic math, distribution
     - historgram and lhdr (forgot what's the name ...)
-  - existing tools and pitfalls
-- analysis (a.k.a ml a.k.a import ts as tf)
+  - existing tools, their pro can cons
+- 06 application
+  - iot
+  - monitoring  
+- 07 analysis (a.k.a ml a.k.a import ts as tf)
   - prediction
   - anomaly detection
-- application
-  - iot
-  - monitoring
-- tracing (keep it in this repo for now)
+- 08 tracing (keep it in this repo for now)
+- 09 OLAP, MPP
+- 10 How we (or maybe just me...) built Xephon-K (not yet)
+  - failure injection and correctness validation
+  - continuous benchmark
 
 ## Related
 
