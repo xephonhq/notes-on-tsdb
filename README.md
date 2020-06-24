@@ -22,7 +22,7 @@ Layout would be (subject to change, and need to merge w/ layout in libtsdb-go)
   - integer, float number and their machine representation (basic for working on compression)
   - statistic, distribution, random etc.
   - maybe information theory
-? data model
+? data model ? a dedicated chapter?
 - 03 components (might flatten this)
   - overview
   - query language
