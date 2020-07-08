@@ -2,7 +2,7 @@
 
 ## Motivation
 
-Have a good understand of layout and int and float. Explain what happens when converting one to another.
+Have a good understanding for integer and float. Explain what happens when converting one to another.
 Might cover gauge, histogram etc. as well.
 
 ## Specs

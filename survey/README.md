@@ -2,6 +2,15 @@
 
 This folder contains survey on implementation of various TSDBs.
 
+## TODO
+
+Databases
+
+- [ ] crates (java)
+- [ ] questdb (java)
+
+## Format
+
 Required list in README
 
 - link to [awesome tsdb](https://github.com/xephonhq/awesome-time-series-database), which should contain basic meta data.
