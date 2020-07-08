@@ -21,7 +21,7 @@ The layout is subject to change, and need to merge w/ libtsdb-go
   - storage
     - different backend, pros and cons
   - distribution
-- 04 survey
+- 04 survey (remove it? or take a small part from the survey folder)
   - influxdb
   - prometheus, victoriametrics, thanos (and another one ... forgot the name from weaveworks)
   - m3db
