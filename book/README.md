@@ -5,8 +5,10 @@ The layout is subject to change, and need to merge w/ libtsdb-go
 - [01 Overview](01-overview)
   - what is time series data and why we need time series database
 - [02 Basic](02-basic)
-  - [Endianess](02-basic/endianess.md) how to store larger than one byte value
-  - integer, float number and their machine representation (basic for working on compression)
+  - [Primitive Types](02-basic/primitive/README.md)
+    - [Endianess](02-basic/primitive/endianness.md) How to store larger than one byte value
+    - [Integer](02-basic/primitive/integer.md) Unsigned and Signed Integer
+    - float number and their machine representation (basic for working on compression)
   - statistic, distribution, random etc.
   - maybe information theory
 ? data model ? a dedicated chapter?

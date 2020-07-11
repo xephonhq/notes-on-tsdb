@@ -2,8 +2,7 @@
 
 ## TODO
 
-- [ ] what happens when you write a string as file (in c, go), what the layout on disk?
-  - mention BOM? though it not really that related to TSDB
+- [ ] go example?
 - [ ] mention `hexdump` `xxd`
 
 ## Overview
@@ -16,7 +15,7 @@
 - numeric literal, left is MSB, i.e. `big-endian` if memory address starts from left
 - bit shift, shift left shift towards MSB, e.g. `0x0400 << 1` is `0x0800`
 
-Example [code/endianness.c](code/endianness.c)
+Example [code/c/endianness.c](code/c/endianness.c)
 
 `2^10+1` when written in literal is `100_0000_0001` or `0x0401` (hex), it requires two bytes
 
@@ -28,10 +27,16 @@ little-endian : 0000_0001  0000_0100
 
 ## File
 
-- [ ] a go example, though cgo might cause problem ...
+- [ ] text format have BOM
 
-When write content to file, you need to determine the endianness explicitly. i.e. convert other types to a byte array.
-For languages like C, use address of the integer of its size allow it to be treated as a char array, and the endianness is same as in processor layout.
+File can use either ordering as long as you can read what you write.
+Normally file content is in a well known serialized format, e.g. text format like plain text, json or binary format like ELF.
+Serialized content is a byte array and the layout on disk is same as the memory.
+Endianess is handled by the encoder and decoder when converting types to and from bytes.
+
+We can write integer to file directly as bytes, this is a straight forward (and unsafe) serialization.
+For languages like C, we can cast int to char array directly ([example endianness_file.c](code/c/endianness_file.c)), the endianness is same as in processor layout.
+For languages that is more type safe, (~~we can use unsafe~~) we can shift the bits to generate a byte array from integer.
 
 ```bash
 xxd f1.bin
