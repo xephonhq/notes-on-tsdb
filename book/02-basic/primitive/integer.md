@@ -27,14 +27,14 @@ Example 4 bit unsigned integer
 
 ## Signed Integer
 
-A straw man approach is use one bit from unsigned integer as the sign, 0 for positive, 1 for negative. This is known as [Sign Magnitude](#sign-magnitude).
-However, this is not the common encoding, the most common encoding is is [two's complement](#twos-complement).
+A straw man approach is use one bit from unsigned integer as the sign, 0 for positive, 1 for negative. 
+This is known as [Sign Magnitude](#sign-magnitude). However, the common encoding is [two's complement](#twos-complement).
 
 ### Two's Complement
 
 - [ ] how to convert between x and -x easily ... or intuitively ... like fast -1 * x implementation?
 
-The most significant bit is negative value, i.e. for w bits, when `bits[w-1]` is 0, the actual value is `-2^(w-1) + rest`.
+The most significant bit is negative value, i.e. for `w` bits, when `bits[w-1]` is 0, the actual value is `-2^(w-1) + rest`.
 Value range is `[-2^(w-1), 2^(w-1) - 1]`.
 
 Example 4 bit signed integer
@@ -46,11 +46,28 @@ Example 4 bit signed integer
 
 ### Sign Magnitude
 
-Sign Magnitude use the first bit as the sign. The main problem of it is the encoding is not bijection, i.e. there is is more than one encoding that maps to 0.
-For example, when using first bit as sign, `0000` is `0`, `1000` is also `0` (`-0`).
-This is not the case in two's complement, `1000` is `-8` instead of `0`, `0000` is the only encoding for `0`.
+Sign Magnitude uses the first bit as the sign. The main problem of it is the encoding is not bijection,
+i.e. there is more than one encoding that maps to 0. For example, `0000` is `0`, `1000` is also `0` (`-0`).
+This is not the case in two's complement, `1000` is `-8` instead of `-0`, `0000` is the only encoding for `0`.
 
 ## Convert Signed and Unsigned
 
-- [ ] 2.2.4 of csapp
+- [ ] does go behave the same?
 - https://golang.org/ref/spec#Conversions Conversions between numeric types
+
+When converting between signed and unsigned with same size, the underlying bits are not changed.
+Only the interpretation changed, i.e. no data lose.
+
+Signed to Unsigned
+
+- if x > 0, same
+- if x < 0, `x + 2^w` (where w is number of bits)
+
+Unsigned to Signed
+
+- if first bit is 0, same, i.e. `x < 2^(w-1)`
+- if first bit is 1, `x - 2^w`
+
+## Expand and Truncate
+
+- [ ] 2.2.6 and 2.2.7 of csapp
