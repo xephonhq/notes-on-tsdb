@@ -7,6 +7,9 @@
 - [ ] emphasis [bijection](https://en.wikipedia.org/wiki/Bijection,_injection_and_surjection) for encoding
 - [ ] why use two's complement encoding instead of one bit for sign
   - bijection
+  - signed extension is easier?
+- [ ] csapp 2.3 integer arithmetic
+- [ ] is truncate allowed in language like Rust? or there will be compiler warning? (it's essentially unsafe behavior ...)
 
 ## Unsigned Integer
 
@@ -52,8 +55,7 @@ This is not the case in two's complement, `1000` is `-8` instead of `-0`, `0000`
 
 ## Convert Signed and Unsigned
 
-- [ ] does go behave the same?
-- https://golang.org/ref/spec#Conversions Conversions between numeric types
+Example in [C](code/c/convert_integer_sign.c) and [Go](code/go/convert_integer_sign_test.go)
 
 When converting between signed and unsigned with same size, the underlying bits are not changed.
 Only the interpretation changed, i.e. no data lose.
@@ -70,4 +72,20 @@ Unsigned to Signed
 
 ## Expand and Truncate
 
-- [ ] 2.2.6 and 2.2.7 of csapp
+- [ ] TODO: use a table? unsigned/signed expand/truncate
+
+Example in [C](code/c/truncate_integer.c) and [Go](code/go/truncate_integer_test.go)
+
+[MS: Conversions from singled integral types](https://docs.microsoft.com/en-us/cpp/c-language/conversions-from-signed-integral-types)
+
+Unsigned
+
+- expand: Zero extension, value does not change.
+- truncate: Remove the most significant `old - new` bits, value can change if the new length is too small.
+
+Signed
+
+- expand: Sign extension, adding copy of MSB, i.e. one extension for negative number and same as unsigned for positive number.
+- truncate: Remove the most significant `old - new` bits (same as unsigned). Because the MSB of the new bits is interrupted as sign bit for two's complement, value can change even if the new length is enough
+  - e.g. `0011` -> `11` changes from `3` to `-1`
+  - e.g. `0001` -> `01` is still `1` after truncate
