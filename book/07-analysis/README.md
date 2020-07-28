@@ -1,4 +1,6 @@
-# Chapter 7: Analysis
+# Chapter 6: Analysis
+
+Analysis time series data, e.g. anomaly detection, prediction etc.
 
 ## References
 

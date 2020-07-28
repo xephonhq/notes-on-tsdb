@@ -8,6 +8,18 @@ Databases
 
 - [ ] crates (java)
 - [ ] questdb (java)
+- influxdb
+- prometheus
+  - victoriametrics
+  - thanos (and another one ... forgot the name from weaveworks)
+- m3db
+- akumuli, btrdb (both are tree like)
+- timescaledb (and others on pg, most of them are dead so ...)
+- druid alike (linkedin also got one)
+- graphite (and newer backends)
+- mysql
+- elasticsearch
+- crate (it looks pretty good, though it seems it is bought by some other company)
 
 ## Format
 
